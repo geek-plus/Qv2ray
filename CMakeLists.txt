@@ -300,12 +300,6 @@ if(EMBED_TRANSLATIONS)
     list(APPEND QV2RAY_SOURCES ${CMAKE_BINARY_DIR}/translations.qrc)
 endif()
 
-add_custom_target(lupdate
-    COMMAND lupdate ${QV2RAY_SOURCES} -ts ${TRANSLATIONS_TS} -locations none
-    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
-
-set_target_properties(lupdate PROPERTIES EXCLUDE_FROM_ALL TRUE)
-
 set(QRC_RESOURCES ${CMAKE_SOURCE_DIR}/resources.qrc)
 
 set(QT_LIBRARY
